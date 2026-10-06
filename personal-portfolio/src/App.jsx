@@ -1,122 +1,22 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const projects = [
+  { title: 'Medicine Inventory System', kind: 'Systems project', description: 'An inventory-focused application designed to make medicine tracking more organized and dependable.', href: 'https://github.com/billyvicencio/Medicine-Inventory-System', tags: ['Inventory', 'Systems'], accent: 'lime' },
+  { title: 'Data Routing & Front-End Integration', kind: 'Web application', description: 'A front-end project exploring how data moves through a modern application interface.', href: 'https://github.com/billyvicencio/Data-Routing-FrontEndIntegration', tags: ['Frontend', 'Data flow'], accent: 'blue' },
+  { title: 'API Fetching', kind: 'Web fundamentals', description: 'A practical exploration of requesting, handling, and presenting data from APIs.', href: 'https://github.com/billyvicencio/API_fetching', tags: ['APIs', 'JavaScript'], accent: 'coral' },
+  { title: 'React Router Navigation & State', kind: 'React project', description: 'A hands-on exercise in route-aware interfaces and state management patterns.', href: 'https://github.com/billyvicencio/React-Router-Navigation-and-State', tags: ['React', 'Routing'], accent: 'violet' },
+  { title: 'Boilerplates', kind: 'Developer toolkit', description: 'Reusable project foundations and experiments for getting ideas into code quickly.', href: 'https://github.com/billyvicencio/boilerplates', tags: ['Starter kits', 'Code'], accent: 'yellow' },
+  { title: 'Library Management System', kind: 'Collaborative project', description: 'A collaborative system project centered on the everyday operations of a library.', href: 'https://github.com/jhnyz/Library-Management-System', tags: ['Collaboration', 'Systems'], accent: 'pink' },
+]
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+function GitHubIcon() { return <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.8c.85 0 1.7.11 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.9.68 1.81v2.69c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg> }
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
-}
-
+function App() { return <main>
+  <nav className="nav" aria-label="Primary navigation"><a className="wordmark" href="#top">BV<span>.</span></a><div className="nav-links"><a href="#work">Work</a><a href="#about">About</a><a className="github-link" href="https://github.com/billyvicencio" target="_blank" rel="noreferrer"><GitHubIcon /> GitHub</a></div></nav>
+  <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow"><span></span> Available for new learning opportunities</p><h1>Building the<br /><em>next line</em> of code.</h1><p className="intro">I’m <strong>Billy Vicencio</strong>, a third-year BSCS student growing through web development, systems thinking, and projects that solve everyday problems.</p><div className="hero-actions"><a className="button primary" href="#work">Explore my work</a><a className="button text-button" href="https://github.com/billyvicencio" target="_blank" rel="noreferrer">Visit GitHub <span>↗</span></a></div></div><div className="hero-art" aria-hidden="true"><div className="orbit orbit-one"></div><div className="orbit orbit-two"></div><div className="monogram">B<span>V</span></div><div className="code-card"><i></i><i></i><i></i><b>&lt;/&gt;</b><small>student<br />developer</small></div><p className="art-label">01—26<br />in progress</p></div></section>
+  <section className="about" id="about"><p className="section-kicker">01 / ABOUT</p><div><h2>Curious by nature.<br />Deliberate in <em>practice.</em></h2></div><div className="about-copy"><p>I’m developing my craft one project at a time—turning lessons into interfaces, APIs, and systems that feel clear and useful.</p><p>Right now, I’m focused on building a strong foundation in computer science while learning the tools that bring ideas to life on the web.</p></div></section>
+  <section className="work" id="work"><div className="work-heading"><div><p className="section-kicker">02 / SELECTED WORK</p><h2>Projects from<br />the <em>workbench.</em></h2></div><p className="project-note">A growing collection of hands-on work across front-end development, APIs, React, and information systems.</p></div><div className="project-grid">{projects.map((project, index) => <a className={`project ${project.accent}`} href={project.href} target="_blank" rel="noreferrer" key={project.title}><div className="project-top"><span>{String(index + 1).padStart(2, '0')}</span><span className="external">↗</span></div><div className="project-mark"><span>{project.title.split(' ').map(word => word[0]).slice(0, 2).join('')}</span></div><div className="project-content"><p className="project-kind">{project.kind}</p><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></div></a>)}</div></section>
+  <section className="contact"><p className="section-kicker">03 / LET’S CONNECT</p><h2>Let’s make<br />something <em>useful.</em></h2><a href="https://github.com/billyvicencio" target="_blank" rel="noreferrer" className="contact-link">github.com/billyvicencio <span>↗</span></a></section>
+  <footer><a className="wordmark" href="#top">BV<span>.</span></a><p>© 2026 Billy Vicencio</p><p>Built with curiosity.</p></footer>
+</main> }
 export default App
